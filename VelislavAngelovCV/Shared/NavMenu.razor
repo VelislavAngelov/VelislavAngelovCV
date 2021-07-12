@@ -1,0 +1,60 @@
+﻿<div class="top-row pl-4 navbar navbar-dark">
+    <a class="navbar-brand" href="">VelislavAngelovCV</a>
+    <button class="navbar-toggler" @onclick="ToggleNavMenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</div>
+<br />
+<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+    <a href="">
+        <span><img class="img-fluid img-profile rounded-right mx-0 mb-0" src="../img/velyiprofile.jpg" alt="" /></span>
+    </a>
+    <ul class="nav flex-column">
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="">
+                <i class="fas fa-user-tie"></i> I am
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="skills">
+                <i class="fas fa-wrench"></i> Skills
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="experience">
+                <i class="fas fa-tractor"></i> Experience
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="education">
+                <i class="fas fa-book-reader"></i>Education
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="interests">
+                <i class="fas fa-gamepad"></i> Interests
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="project">
+                <i class="fas fa-tasks"></i> Project
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="print">
+                <i class="fas fa-print"></i> For print
+            </NavLink>
+        </li>
+    </ul>
+</div>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}
