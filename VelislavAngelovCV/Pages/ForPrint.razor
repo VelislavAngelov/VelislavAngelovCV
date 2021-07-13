@@ -1,0 +1,116 @@
+﻿@page "/print"
+@inject IJSRuntime JsRuntime;
+
+<h4 class="text-md-center display-4">
+    Velislav Angelov Angelov
+</h4>
+<div class="text-md-center">
+    Email:angelovik@abv.bg
+</div>
+<div class="text-md-center subheading mb-5">
+    Phone:(+359)887 004 031
+</div>
+
+<hr class="m-0" />
+<div style="padding-bottom:5px;font-weight:bold;font-size:15px;color:#000000;">Computer Skills & Tools</div>
+<div class="d-flex flex-column flex-md-row justify-content-between">
+    <ul style="list-style-type: circle">
+        <li>
+            Windows OS, Linux Ubuntu
+        </li>
+        <li>
+            MS Visual Studio 2017/2019, SSMS, Visual Studio Code
+        </li>
+        <li>
+            C #, JS, MSSQL
+        </li>
+        <li>
+            Linq, ASP.NET Core, ASP.NET MVC, Razor, ASP.NET WebAPI, SignalR, Blazor, Entity Framework, AutoMapper, XUnit
+        </li>
+        <li>
+            HTML5, CSS3, Bootstrap
+        </li>
+        <li>
+            GitHub, Azure
+        </li>
+    </ul>
+</div>
+<hr class="m-0" />
+<div style="padding-bottom:5px;font-weight:bold;font-size:15px;color:#000000;">Personal strengths:</div>
+<div class="d-flex flex-column flex-md-row justify-content-between">
+    <ul style="list-style-type: circle">
+        <li>
+            Teamwork
+        </li>
+        <li>
+            Punctual
+        </li>
+        <li>
+            Good at working under pressure
+        </li>
+        <li>
+            Consistent at the workplace
+        </li>
+        <li>
+            Flexible
+        </li>
+        <li>
+            Calm and nerveless at working under pressure
+        </li>
+        <li>
+            Focused
+        </li>
+        <li>
+            Responsible for performing his tasks
+        </li>
+        <li>
+            Non-distraacting
+        </li>
+    </ul>
+</div>
+<hr class="m-0" />
+<div style="padding-bottom:5px;font-weight:bold;font-size:15px;color:#000000;">Work experience as a developer</div>
+<div class="d-flex flex-column flex-md-row justify-content-between">
+    <div class="flex-grow-1">
+        <h3 class="subheading mb-3">Null</h3>
+    </div>
+</div>
+<hr class="m-0" />
+<div style="padding-bottom:5px;font-weight:bold;font-size:15px;color:#000000;">Education</div>
+<div class="d-flex flex-column flex-md-row justify-content-between">
+    <div class="flex-grow-1">
+        <h3 class="mb-0">SoftUni</h3>
+        <div class="subheading mb-3">Software Engineering with C#</div>
+    </div>
+    <div class="flex-grow-1">
+        @*<h3 class="mb-0">AVO-Bell</h3>*@
+        <div class="subheading mb-3">English Level <span style="color:red">A</span></div>
+    </div>
+</div>
+<hr class="m-0" />
+<div style="padding-bottom:5px;font-weight:bold;font-size:15px;color:#000000;">Marking</div>
+<div class="d-flex flex-column flex-md-row justify-content-between">
+    <p>
+        I want, I can and I will learn what I need, to be an excellent coworker!
+    </p>
+</div>
+<hr class="m-0" />
+<br />
+<button style="display: @visualizationButton" type="button" class="btn btn-primary" @onclick="HideButton">
+    Print
+</button>
+<br />
+<br />
+
+@code {
+    private string visualizationButton = "block";
+
+    private void HideButton()
+    {
+        visualizationButton = "none";
+
+        JsRuntime.InvokeVoidAsync("print");
+
+        visualizationButton = "block";
+    }
+}

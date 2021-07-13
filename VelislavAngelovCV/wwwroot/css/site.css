@@ -58,7 +58,7 @@ app {
         font-size: 1.1rem;
     }
 
-    .sidebar .oi {
+    .sidebar .fas {
         width: 2rem;
         font-size: 1.1rem;
         vertical-align: text-top;
@@ -157,7 +157,7 @@ app {
 
     .sidebar {
         width: 250px;
-        height: 100vh;
+        height: 150vh;
         position: sticky;
         top: 0;
     }
